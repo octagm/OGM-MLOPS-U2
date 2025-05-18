@@ -21,10 +21,11 @@ La lógica utilizada clasifica el estado de salud en las siguientes categorías:
 | Temperatura (°C) | Ritmo Cardíaco (ppm) | Saturación O₂ (%) | Resultado             |
 |------------------|-----------------------|--------------------|------------------------|
 | 36 - 37.4        | 60 - 100              | ≥ 95               | NO ENFERMO             |
-| 37.5 - 38.4      | 101 - 120             | ≥ 92               | ENFERMO LEVE           |
-| ≥ 38.5           | > 120                 | < 92               | ENFERMEDAD AGUDA       |
-| 37 - 38          | 60 - 99               | < 90               | ENFERMEDAD CRÓNICA     |
-| —                | —                     | —                  | Valores fuera de rango |
+| 37.5 - 38.4      | 101 - 120             | 92 - 95            | ENFERMO LEVE           |
+| 38.5 - 40        | > 120                 | 90 - 92            | ENFERMEDAD AGUDA       |
+| > 40             | 60 - 99               | 85 - 90            | ENFERMEDAD CRÓNICA     |
+| > 40             | < 60                  | < 85               | ENFERMEDAD TERMINAL    |
+| —                | —                     | —                  | Valores Fuera de Rango |
 
 ---
 
