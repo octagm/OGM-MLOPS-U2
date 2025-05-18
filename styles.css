@@ -1,38 +1,116 @@
+/* Estilos existentes - ya están en tu archivo */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #eef2f3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 15px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  #resultado {
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #eef2f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Nuevos estilos para el reporte */
+.buttons-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#generarReporte {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#generarReporte:hover {
+  background-color: #45a049;
+}
+
+.reporte-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  display: none;
+}
+
+.reporte-section {
+  margin-bottom: 20px;
+}
+
+.reporte-title {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.reporte-item {
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 3px;
+  background-color: #fff;
+  border-left: 3px solid #4CAF50;
+}
+
+.reporte-item:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.category-stat {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #e0e0e0;
+}
+
+.prediccion-fecha {
+  font-weight: bold;
+  color: #555;
+}
+
+.prediccion-resultado {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Ajuste para contenedor más grande */
+.container {
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
