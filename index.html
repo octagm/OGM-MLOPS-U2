@@ -20,10 +20,34 @@
         <input type="number" id="saturacion" required>
       </label>
       <button type="submit">Enviar</button>
-      <button type="button" id="reporteBtn">Generar Reporte</button>
     </form>
     <div id="resultado"></div>
+
+    <div class="buttons-container">
+      <button id="generarReporte">Generar Reporte</button>
+    </div>
+
+    <!-- Sección para mostrar el reporte -->
+    <div id="reporteContainer" class="reporte-container">
+      <h2>Reporte de Diagnósticos</h2>
+
+      <div class="reporte-section">
+        <div class="reporte-title">Predicciones por Categoría:</div>
+        <div id="categorias"></div>
+      </div>
+
+      <div class="reporte-section">
+        <div class="reporte-title">Últimas 5 Predicciones:</div>
+        <div id="ultimasPredicciones"></div>
+      </div>
+
+      <div class="reporte-section">
+        <div class="reporte-title">Fecha de Última Predicción:</div>
+        <div id="ultimaFecha"></div>
+      </div>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
