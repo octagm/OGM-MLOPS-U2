@@ -3,6 +3,7 @@ name: CI/CD para app médica - OGM
 permissions:
   pull-requests: write
   issues: write
+  packages: write
 
 on:
   pull_request:
