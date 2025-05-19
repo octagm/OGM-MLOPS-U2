@@ -58,18 +58,34 @@ El backend estará disponible en `http://localhost:5000`.
 ## 🖥 Interfaz Web
 
 Abre el archivo `index.html` directamente en tu navegador.
-![image](https://github.com/user-attachments/assets/c21cd63e-10b7-4e52-a703-37f1e846d8a3)
+<img width="957" alt="image" src="https://github.com/user-attachments/assets/d3a8e3ea-acad-472a-9e4b-1d6c8f0ee377" />
 
+El usuario tiene dos (2) opciones:
 
-Formulario de entrada:
+1. Formulario de entrada:
 
-* Temperatura en grados Celsius.
-* Ritmo cardíaco en pulsaciones por minuto.
-* Saturación de oxígeno en porcentaje.
+* Temperatura en grados Celsius. Ingrese un valor entre 30°C y 45°C.
+* Ritmo cardíaco en pulsaciones por minuto. Ingrese un valor entre 30 y 200 ppm.
+* Saturación de oxígeno en porcentaje. Ingrese un valor entre 50% y 100%.
 
 Al hacer clic en **Enviar**, el formulario se comunica con el backend y muestra el diagnóstico.
 
-![image](https://github.com/user-attachments/assets/710b55ae-41d8-41d8-a29d-4369db5ab74d)
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/5e4c604b-f626-4c3c-9d2c-04e201d18f92" />
+
+
+
+2. Generar Reporte: 
+
+Dar Clic en el Boton **Generar Reporte**, y aparece en la pagina:
+- El Total de Predicciones por categoría
+- Las cinco (5) últimas predicciones en salud realizadas
+- La fecha de la última predicción realizada
+
+Una vez revisado el Reporte, se puede dar Clic en **Cerrar Reporte** para que se remueva el reporte en la Página.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/25803f7a-6432-40d1-aee7-73d94ac6e3f0" />
+
+
 
 ---
 
