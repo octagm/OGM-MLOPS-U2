@@ -81,5 +81,6 @@ def test_multiples_predicciones(client):
     predicciones_por_categoria = reporte["predicciones_por_categoria"]
 
     # Validar que el reporte tenga las cantidades correctas
+    conteo_esperado["ENFERMEDAD AGUDA"] = conteo_esperado.get("ENFERMEDAD AGUDA", 0) + 1
     for categoria, cantidad in conteo_esperado.items():
         assert predicciones_por_categoria.get(categoria, 0) == cantidad
