@@ -1,7 +1,16 @@
 import pytest
+import os
+import json
 from app import app, diagnostico
 
-# Cliente de pruebas de Flask
+REPORTE_PATH = "reporte.json"  # Asegúrate de que coincida con el path usado por app.py
+
+@pytest.fixture(autouse=True)
+def limpiar_reporte():
+    # Esta función se ejecuta automáticamente antes de cada test
+    if os.path.exists(REPORTE_PATH):
+        os.remove(REPORTE_PATH)
+
 @pytest.fixture
 def client():
     with app.test_client() as client:
@@ -14,20 +23,22 @@ def test_diagnostico_funcion():
     assert diagnostico(40.2, 70, 88) == "ENFERMEDAD CRÓNICA"
     assert diagnostico(40.5, 50, 80) == "ENFERMEDAD TERMINAL"
 
-def test_post_diagnostico(client):
+def test_post_diagnostico_and_reporte(client):
     response = client.post('/diagnostico', json={
-        "temperatura": 37.8,
-        "ritmo_cardiaco": 110,
-        "saturacion_oxigeno": 93
+        "temperatura": 39.0,
+        "ritmo_cardiaco": 130,
+        "saturacion_oxigeno": 91
     })
     assert response.status_code == 200
     data = response.get_json()
-    assert data["resultado"] == "ENFERMO LEVE"
+    assert data["resultado"] == "ENFERMEDAD AGUDA"
 
-def test_get_reporte(client):
+    # Verificar que el reporte refleja la predicción
     response = client.get('/reporte')
     assert response.status_code == 200
-    data = response.get_json()
-    assert "predicciones_por_categoria" in data
-    assert "ultimas_predicciones" in data
-    assert "ultima_prediccion_fecha" in data
+    reporte = response.get_json()
+    assert "predicciones_por_categoria" in reporte
+    assert "ultimas_predicciones" in reporte
+    assert "ultima_prediccion_fecha" in reporte
+    assert "ENFERMEDAD AGUDA" in reporte["predicciones_por_categoria"]
+    assert reporte["predicciones_por_categoria"]["ENFERMEDAD AGUDA"] >= 1
