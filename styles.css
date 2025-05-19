@@ -6,6 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .container {
@@ -13,6 +14,9 @@ body {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 label {
@@ -25,45 +29,64 @@ input {
   padding: 8px;
   margin-top: 5px;
   box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
 }
 
 button {
   padding: 10px 20px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
 }
 
 #resultado {
   margin-top: 20px;
   font-weight: bold;
+  color: #333;
 }
 
-/* Nuevos estilos para el reporte */
+/* Botones Generar Reporte y Cerrar Reporte */
 .buttons-container {
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
 
-#generarReporte {
+#generarReporte, #cerrarReporte {
   background-color: #4CAF50;
   color: white;
-  border: none;
   padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
+  user-select: none;
+  font-weight: bold;
 }
 
-#generarReporte:hover {
+#generarReporte:hover, #cerrarReporte:hover {
   background-color: #45a049;
 }
 
+#cerrarReporte {
+  display: none; /* Oculto por defecto */
+}
+
+/* Contenedor del reporte */
 .reporte-container {
   margin-top: 30px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
-  display: none;
+  display: none; /* Oculto por defecto */
 }
 
 .reporte-section {
@@ -83,6 +106,7 @@ button {
   border-radius: 3px;
   background-color: #fff;
   border-left: 3px solid #4CAF50;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .reporte-item:nth-child(odd) {
@@ -96,21 +120,29 @@ button {
   padding: 5px 10px;
   border-radius: 15px;
   background-color: #e0e0e0;
+  font-weight: 600;
+  color: #555;
 }
 
 .prediccion-fecha {
   font-weight: bold;
   color: #555;
+  margin-right: 10px;
 }
 
 .prediccion-resultado {
   font-weight: bold;
-  margin-left: 10px;
+  color: #333;
 }
 
-/* Ajuste para contenedor más grande */
-.container {
-  max-width: 600px;
-  max-height: 90vh;
-  overflow-y: auto;
+/* Mensajes de error */
+.error-message {
+  color: red;
+  font-size: 0.85em;
+  margin-left: 5px;
+}
+
+.input-error {
+  border: 1px solid red;
+  background-color: #ffe6e6;
 }

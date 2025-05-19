@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Diagnóstico de Salud</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
     <h1>Diagnóstico de Salud</h1>
+
     <form id="healthForm">
       <label>Temperatura (°C):
-        <input type="number" step="0.1" id="temperatura" required>
+        <input type="number" step="0.1" id="temperatura" required />
+        <span id="error-temperatura" class="error-message"></span>
       </label>
+
       <label>Ritmo Cardíaco (ppm):
-        <input type="number" id="ritmo" required>
+        <input type="number" id="ritmo" required />
+        <span id="error-ritmo" class="error-message"></span>
       </label>
+
       <label>Saturación de Oxígeno (%):
-        <input type="number" id="saturacion" required>
+        <input type="number" id="saturacion" required />
+        <span id="error-saturacion" class="error-message"></span>
       </label>
+
       <button type="submit">Enviar</button>
     </form>
+
     <div id="resultado"></div>
 
     <div class="buttons-container">
@@ -28,8 +36,11 @@
     </div>
 
     <!-- Sección para mostrar el reporte -->
-    <div id="reporteContainer" class="reporte-container">
+    <div id="reporteContainer" class="reporte-container" style="display: none;">
       <h2>Reporte de Diagnósticos</h2>
+
+      <!-- Botón para cerrar el reporte, inicialmente oculto -->
+      <button id="cerrarReporte" style="display:none; margin-bottom: 15px;">Cerrar Reporte</button>
 
       <div class="reporte-section">
         <div class="reporte-title">Predicciones por Categoría:</div>
