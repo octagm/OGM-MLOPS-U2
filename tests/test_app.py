@@ -10,7 +10,7 @@ from app import app, diagnostico
 
 REPORTE_PATH = "reporte.json"
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(autouse=True, scope='function')
 def limpiar_reporte():
     # Esta función se ejecuta automáticamente antes de cada test
     if os.path.exists(REPORTE_PATH):
