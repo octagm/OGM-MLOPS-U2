@@ -1,9 +1,15 @@
 import pytest
+import sys
 import os
 import json
+
+
+# Agregando el directorio raiz del proyecto al Path de Python
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from app import app, diagnostico
 
-REPORTE_PATH = "reporte.json"  # Asegúrate de que coincida con el path usado por app.py
+REPORTE_PATH = "reporte.json"
 
 @pytest.fixture(autouse=True)
 def limpiar_reporte():
